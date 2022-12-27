@@ -7,20 +7,20 @@ import Homepage from './pages/HomePage';
 import Detail from './pages/detail';
 
 function App() {
-  return (
-    <Box sx={{ my: 0, py: 0 }}>
-      <Router>
-        <Switch>
-          <Route exact path='/'>
-            <Homepage />
-          </Route>
-          <Route exact path='/search'>
-            <Detail />
-          </Route>
-        </Switch>
-      </Router>
-    </Box>
-  );
+    return (
+        <Box sx={{ my: 0, py: 0 }}>
+            <Router>
+                <Switch>
+                    <Route exact path='/'>
+                        <Homepage />
+                    </Route>
+                    <Route exact path='/search'>
+                        <Detail />
+                    </Route>
+                </Switch>
+            </Router>
+        </Box>
+    );
 }
 
 export default App;
