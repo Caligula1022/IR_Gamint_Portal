@@ -5,16 +5,16 @@ module.exports = function (app) {
         next();
     });
 
-    // app.use(
-    //     '/query',
-    //     createProxyMiddleware({
-    //         target: 'http://fast-bayou-57671.herokuapp.com',
-    //         changeOrigin: true,
-    //         onProxyRes: function (proxyRes, req, res) {
-    //             proxyRes.headers['Access-Control-Allow-Origin'] = '*';
-    //         },
-    //     })
-    // );
+    app.use(
+        '/query',
+        createProxyMiddleware({
+            target: 'http://localhost:8080',
+            changeOrigin: true,
+            onProxyRes: function (proxyRes, req, res) {
+                proxyRes.headers['Access-Control-Allow-Origin'] = '*';
+            },
+        })
+    );
 
     app.use(
         '/api/appdetails',
