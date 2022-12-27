@@ -22,6 +22,9 @@ module.exports = function (app) {
     createProxyMiddleware({
       target: 'https://fast-bayou-57671.herokuapp.com',
       changeOrigin: true,
+      onProxyRes: function (proxyRes, req, res) {
+        proxyRes.headers['Access-Control-Allow-Origin'] = '*';
+      },
     })
   );
 };
