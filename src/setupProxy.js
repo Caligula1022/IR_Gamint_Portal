@@ -1,5 +1,4 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
-
 module.exports = function (app) {
   app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -20,7 +19,7 @@ module.exports = function (app) {
   app.use(
     '/query',
     createProxyMiddleware({
-      target: 'https://fast-bayou-57671.herokuapp.com',
+      target: 'http://fast-bayou-57671.herokuapp.com',
       changeOrigin: true,
       onProxyRes: function (proxyRes, req, res) {
         proxyRes.headers['Access-Control-Allow-Origin'] = '*';
